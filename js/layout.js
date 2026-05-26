@@ -10,7 +10,7 @@
     <header class="site-header">
       <div class="container site-header__inner">
         <a class="logo" href="${href("index.html")}" aria-label="realestat333 home">
-          <span class="logo__name">realestat333</span>
+          <span class="logo__name">realestat<span class="logo__accent">333</span></span>
           <span class="logo__tag">Real Estate, Elevated</span>
         </a>
         <nav class="nav" aria-label="Primary">
