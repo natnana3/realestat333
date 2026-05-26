@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# realestat333
 
-## Getting Started
+Static HTML website for **realestat333** — full-service real estate across all Maryland counties.
 
-First, run the development server:
+## Stack
+
+- **HTML5** pages
+- **CSS** (`css/styles.css`) — bespoke brand (verdigris + copper, no template palette)
+- **Vanilla JavaScript** for layout, search, listings, and county hubs
+
+## Run locally
+
+Open `index.html` in a browser, or serve the folder:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx --yes serve .
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then visit `http://localhost:3000` (or the port shown).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Page | File |
+|------|------|
+| Home | `index.html` |
+| Search | `search.html` |
+| Listing detail | `listing.html?slug=...` |
+| Maryland counties | `maryland/index.html` |
+| County hub | `maryland/county.html?county=montgomery` |
+| Buy / Sell / Rent / Invest | `buy.html`, etc. |
 
-## Learn More
+## Sample listings & IDX
 
-To learn more about Next.js, take a look at the following resources:
+Demo listings live in `js/listings.js`. For production, replace this file via your MLS/IDX feed (RESO Web API, Bridge, Trestle, etc.) or a small backend that writes JSON on a schedule.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## SEO
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `robots.txt`
+- `sitemap.xml` (update `https://realestat333.com` to your live domain)
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Proprietary — realestat333.

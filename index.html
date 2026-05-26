@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>realestat333 — Real Estate, Elevated</title>
+    <meta
+      name="description"
+      content="realestat333 is an established Maryland real estate company serving buyers, sellers, renters, and investors in every county."
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "realestat333",
+        "description": "Full-service real estate across all Maryland counties.",
+        "areaServed": { "@type": "State", "name": "Maryland" }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="site-header"></div>
+
+    <main>
+      <section class="bg-quiet-grid hero">
+        <div class="container hero__grid">
+          <div>
+            <p class="badge">
+              <span class="badge__dot" aria-hidden="true"></span>
+              Established, full-service real estate
+            </p>
+            <h1>
+              Real estate decisions,
+              <span class="text-brand">made confidently</span>.
+            </h1>
+            <p class="hero__lead">
+              realestat333 supports buyers, sellers, renters, and investors across
+              every Maryland county with a modern search experience, human-first
+              guidance, and neighborhood-level insight.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary btn--lg" href="buy.html">Explore homes for sale</a>
+              <a class="btn btn--secondary btn--lg" href="sell.html">Get a pricing strategy</a>
+            </div>
+
+            <form class="search-bar" action="search.html" method="get" role="search">
+              <div class="field">
+                <label for="q">City, neighborhood, ZIP</label>
+                <input
+                  id="q"
+                  name="q"
+                  type="search"
+                  placeholder="Try Annapolis, Montgomery, 21201…"
+                  autocomplete="address-level2"
+                />
+              </div>
+              <div class="field">
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                  <option value="for-sale">For sale</option>
+                  <option value="for-rent">For rent</option>
+                  <option value="pending">Pending</option>
+                  <option value="sold">Sold</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="price">Price</label>
+                <select id="price" name="price">
+                  <option value="any">Any</option>
+                  <option value="0-300k">$0–$300k</option>
+                  <option value="300k-600k">$300k–$600k</option>
+                  <option value="600k-1m">$600k–$1M</option>
+                  <option value="1m+">$1M+</option>
+                </select>
+              </div>
+              <div>
+                <button class="btn btn--primary btn--lg" type="submit" style="width:100%">
+                  Search listings
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="card">
+            <p style="margin:0;font-weight:500">Market snapshot</p>
+            <p class="text-muted" style="margin:0.5rem 0 0;font-size:0.875rem;line-height:1.6">
+              Track price trends, days-on-market, and neighborhood demand — then share a
+              short list with your advisor in one click.
+            </p>
+            <div class="stat-grid">
+              <div class="stat">
+                <div class="stat__label">Saved searches</div>
+                <div class="stat__value">Instant</div>
+                <div class="stat__label">Email alerts that matter</div>
+              </div>
+              <div class="stat">
+                <div class="stat__label">Lead response</div>
+                <div class="stat__value">&lt; 5m</div>
+                <div class="stat__label">Smart routing + SMS</div>
+              </div>
+              <div class="stat">
+                <div class="stat__label">Tours</div>
+                <div class="stat__value">Simple</div>
+                <div class="stat__label">Book in a few clicks</div>
+              </div>
+              <div class="stat">
+                <div class="stat__label">Offers</div>
+                <div class="stat__value">Clarity</div>
+                <div class="stat__label">Data-backed strategy</div>
+              </div>
+            </div>
+            <p style="margin:1.5rem 0 0;font-size:0.75rem" class="text-muted">
+              Serving all
+              <a href="maryland/index.html" class="text-accent">Maryland counties</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container grid-3">
+          <article class="card card--flat">
+            <h2 style="margin:0;font-size:1rem;font-weight:600">Buyer experience that’s actually fast</h2>
+            <p class="text-muted" style="margin:0.5rem 0 0;font-size:0.875rem;line-height:1.6">
+              Map search, filters that feel instant, save-and-share shortlists, and alerts
+              designed to reduce noise — not add it.
+            </p>
+          </article>
+          <article class="card card--flat">
+            <h2 style="margin:0;font-size:1rem;font-weight:600">Seller strategy with proof</h2>
+            <p class="text-muted" style="margin:0.5rem 0 0;font-size:0.875rem;line-height:1.6">
+              Pricing ranges, comps, staging guidance, and a timeline that keeps you ahead
+              of inspections, appraisal, and closing.
+            </p>
+          </article>
+          <article class="card card--flat">
+            <h2 style="margin:0;font-size:1rem;font-weight:600">Investing support end-to-end</h2>
+            <p class="text-muted" style="margin:0.5rem 0 0;font-size:0.875rem;line-height:1.6">
+              Rental analysis, cash-flow assumptions, area demand, and partner referrals
+              for lending, insurance, and property management.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="js/counties.js"></script>
+    <script src="js/listings.js"></script>
+    <script src="js/layout.js"></script>
+  </body>
+</html>

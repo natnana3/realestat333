@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact — realestat333</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="site-header"></div>
+    <main class="page-content">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h1 class="page-title">Start a conversation</h1>
+        <div class="grid-2" style="margin-top:2rem">
+          <form class="card card--flat" action="#" method="post" onsubmit="event.preventDefault(); alert('Thank you — we will route you to the right Maryland specialist.');">
+            <div class="field" style="margin-bottom:1rem">
+              <label for="name">Name</label>
+              <input id="name" name="name" required autocomplete="name" />
+            </div>
+            <div class="field" style="margin-bottom:1rem">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email" />
+            </div>
+            <div class="field" style="margin-bottom:1rem">
+              <label for="message">How can we help?</label>
+              <textarea id="message" name="message" required placeholder="Buying, selling, renting, investing…"></textarea>
+            </div>
+            <button class="btn btn--primary btn--lg" type="submit">Send</button>
+          </form>
+          <div class="card card--flat">
+            <strong>What happens next</strong>
+            <ul class="text-muted" style="margin:0.75rem 0 0;padding-left:1.25rem;font-size:0.875rem;line-height:1.8">
+              <li>We confirm your needs (area, timeline, constraints).</li>
+              <li>We match you with a county specialist.</li>
+              <li>We set a plan: search, pricing, or investing model.</li>
+            </ul>
+            <div class="card card--muted card--flat" style="margin-top:1.5rem">
+              <p class="text-muted" style="margin:0;font-size:0.875rem;line-height:1.6">
+                Fair Housing best practices in all marketing. Accessibility committed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div id="site-footer"></div>
+    <script src="js/layout.js"></script>
+  </body>
+</html>

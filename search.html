@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Listings search — realestat333</title>
+    <meta name="description" content="Search Maryland homes for sale and rent across all counties." />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="site-header"></div>
+    <main class="page-content">
+      <div class="container">
+        <p class="eyebrow">Search</p>
+        <h1 class="page-title">Listings search</h1>
+
+        <div class="card card--flat" style="margin-top:2rem">
+          <form id="search-form" action="search.html" method="get">
+            <div class="grid-2" style="gap:1rem">
+              <div class="field">
+                <label for="q">City, county, ZIP</label>
+                <input id="q" name="q" type="search" placeholder="Montgomery, Anne Arundel, 21201…" />
+              </div>
+              <div class="field">
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                  <option value="for-sale">For sale</option>
+                  <option value="for-rent">For rent</option>
+                  <option value="pending">Pending</option>
+                  <option value="sold">Sold</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="minPrice">Min price</label>
+                <input id="minPrice" name="minPrice" inputmode="numeric" placeholder="0" />
+              </div>
+              <div class="field">
+                <label for="maxPrice">Max price</label>
+                <input id="maxPrice" name="maxPrice" inputmode="numeric" placeholder="1000000" />
+              </div>
+              <div class="field">
+                <label for="beds">Beds+</label>
+                <input id="beds" name="beds" inputmode="numeric" placeholder="Any" />
+              </div>
+              <div class="field">
+                <label for="baths">Baths+</label>
+                <input id="baths" name="baths" inputmode="numeric" placeholder="Any" />
+              </div>
+            </div>
+            <p style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center">
+              <button class="btn btn--primary" type="submit">Search</button>
+              <span class="text-muted" style="font-size:0.875rem">
+                <span id="result-count">0</span> results ·
+                <a href="maryland/index.html" class="text-accent">Browse by county</a>
+              </span>
+            </p>
+          </form>
+        </div>
+
+        <div id="results" class="grid-2" style="margin-top:1.5rem"></div>
+      </div>
+    </main>
+    <div id="site-footer"></div>
+    <script src="js/counties.js"></script>
+    <script src="js/listings.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/search.js"></script>
+  </body>
+</html>
