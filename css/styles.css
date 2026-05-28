@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap");
 
 :root {
-  --bg: #f5f9ff;
-  --fg: #0f172a;
-  --surface: #ffffff;
-  --surface-2: #e8f3fb;
-  --muted: #5b6475;
-  --border: rgba(15, 23, 42, 0.12);
+  --bg: #f4f9ff;
+  --bg-2: #e8f2fc;
+  --fg: #0c1628;
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-2: rgba(232, 244, 255, 0.88);
+  --muted: #5a6b82;
+  --border: rgba(12, 22, 40, 0.1);
   --brand: #2a5b4a;
   --brand-2: #1f3f38;
   --accent: #b8743a;
@@ -14,14 +15,18 @@
   --yellow: #d4a017;
   --yellow-2: #b8860b;
   --yellow-soft: rgba(212, 160, 23, 0.14);
-  --ring: rgba(212, 160, 23, 0.5);
-  --sky: #38bdf8;
-  --sky-2: #0284c7;
-  --sky-3: #0369a1;
-  --sky-soft: rgba(56, 189, 248, 0.12);
-  --sky-soft-2: rgba(56, 189, 248, 0.22);
-  --sky-ring: rgba(56, 189, 248, 0.45);
-  --shadow: 0 18px 45px rgba(15, 23, 42, 0.1);
+  --ring: rgba(0, 180, 255, 0.45);
+  --city-cyan: #00c8ff;
+  --city-cyan-2: #0099e6;
+  --city-glow: rgba(0, 200, 255, 0.35);
+  --city-glow-soft: rgba(0, 200, 255, 0.12);
+  --sky: #22d3ee;
+  --sky-2: #0891b2;
+  --sky-3: #0e7490;
+  --sky-soft: rgba(34, 211, 238, 0.14);
+  --sky-soft-2: rgba(34, 211, 238, 0.24);
+  --sky-ring: rgba(34, 211, 238, 0.5);
+  --shadow: 0 18px 45px rgba(8, 30, 60, 0.1);
   --radius-sm: 12px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -32,12 +37,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #070a0f;
-    --fg: #e8eef7;
-    --surface: #0b101b;
-    --surface-2: #0f172a;
-    --muted: #a8b3c7;
-    --border: rgba(232, 238, 247, 0.12);
+    --bg: #050a12;
+    --bg-2: #0a1424;
+    --fg: #e8f4ff;
+    --surface: rgba(11, 18, 32, 0.88);
+    --surface-2: rgba(15, 28, 48, 0.85);
+    --muted: #94a8c4;
+    --border: rgba(232, 244, 255, 0.1);
     --brand: #4aa58a;
     --brand-2: #2d7d66;
     --accent: #d69a67;
@@ -45,13 +51,17 @@
     --yellow: #e8c547;
     --yellow-2: #c9a91e;
     --yellow-soft: rgba(232, 197, 71, 0.12);
-    --ring: rgba(232, 197, 71, 0.45);
+    --ring: rgba(34, 211, 238, 0.45);
+    --city-cyan: #5ee9ff;
+    --city-cyan-2: #22d3ee;
+    --city-glow: rgba(94, 233, 255, 0.28);
+    --city-glow-soft: rgba(94, 233, 255, 0.1);
     --sky: #7dd3fc;
     --sky-2: #38bdf8;
     --sky-3: #0ea5e9;
-    --sky-soft: rgba(125, 211, 252, 0.10);
+    --sky-soft: rgba(125, 211, 252, 0.1);
     --sky-soft-2: rgba(125, 211, 252, 0.18);
-    --sky-ring: rgba(125, 211, 252, 0.40);
+    --sky-ring: rgba(125, 211, 252, 0.4);
     --shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
   }
 }
@@ -71,12 +81,103 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  background: var(--bg);
+  position: relative;
+  isolation: isolate;
+  background-color: var(--bg);
   color: var(--fg);
   font-family: var(--font-sans);
   line-height: 1.5;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Digital city ambient background (inspired by isometric 3D tech aesthetic) */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+
+body::before {
+  z-index: -2;
+  background:
+    radial-gradient(ellipse 55% 40% at 88% 8%, var(--city-glow-soft), transparent 55%),
+    radial-gradient(ellipse 45% 35% at 5% 92%, rgba(0, 153, 230, 0.08), transparent 50%),
+    linear-gradient(165deg, #ffffff 0%, var(--bg) 42%, var(--bg-2) 100%);
+}
+
+body::after {
+  z-index: -1;
+  opacity: 0.9;
+  background-image:
+    linear-gradient(
+      105deg,
+      transparent 42%,
+      var(--city-glow-soft) 49%,
+      rgba(0, 200, 255, 0.06) 50%,
+      transparent 58%
+    ),
+    linear-gradient(
+      -75deg,
+      transparent 38%,
+      rgba(0, 200, 255, 0.05) 48%,
+      transparent 56%
+    ),
+    linear-gradient(30deg, transparent 47%, rgba(0, 180, 255, 0.035) 49%, transparent 51%),
+    linear-gradient(-30deg, transparent 47%, rgba(0, 180, 255, 0.035) 49%, transparent 51%),
+    radial-gradient(circle at 72% 28%, var(--city-glow) 0, transparent 42%),
+    radial-gradient(circle at 18% 68%, rgba(0, 153, 230, 0.15) 0, transparent 38%),
+    radial-gradient(
+      color-mix(in oklab, var(--city-cyan) 18%, transparent) 1px,
+      transparent 1px
+    );
+  background-size:
+    100% 100%,
+    100% 100%,
+    52px 90px,
+    52px 90px,
+    100% 100%,
+    100% 100%,
+    24px 24px;
+  background-position: 0 0, 0 0, 0 0, 26px 15px, 0 0, 0 0, 0 0;
+  mask-image: linear-gradient(180deg, #000 0%, #000 85%, transparent 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  body::before {
+    background:
+      radial-gradient(ellipse 50% 35% at 85% 10%, var(--city-glow-soft), transparent 55%),
+      radial-gradient(ellipse 40% 30% at 8% 88%, rgba(34, 211, 238, 0.06), transparent 50%),
+      linear-gradient(165deg, #050a12 0%, var(--bg) 50%, #0a1424 100%);
+  }
+
+  body::after {
+    opacity: 0.65;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body::after {
+    animation: city-glow-pulse 14s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes city-glow-pulse {
+  from {
+    opacity: 0.75;
+  }
+  to {
+    opacity: 0.95;
+  }
+}
+
+main,
+.page-content {
+  position: relative;
+  z-index: 0;
 }
 
 ::selection {
@@ -110,10 +211,12 @@ img {
   position: sticky;
   top: 0;
   z-index: 40;
-  border-bottom: 1px solid color-mix(in oklab, var(--border) 60%, transparent);
-  box-shadow: inset 0 -3px 0 var(--sky);
-  background: color-mix(in oklab, var(--bg) 82%, transparent);
-  backdrop-filter: blur(12px);
+  border-bottom: 1px solid color-mix(in oklab, var(--city-cyan) 22%, var(--border));
+  box-shadow:
+    inset 0 -3px 0 var(--city-cyan),
+    0 8px 32px rgba(0, 153, 230, 0.06);
+  background: color-mix(in oklab, var(--surface) 75%, transparent);
+  backdrop-filter: blur(16px) saturate(1.2);
 }
 
 .site-header__inner {
@@ -302,9 +405,12 @@ main {
   background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
-  box-shadow: var(--shadow);
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), var(--shadow);
-  border: 1px solid color-mix(in oklab, var(--border) 60%, transparent);
+  box-shadow:
+    0 1px 2px rgba(8, 30, 60, 0.04),
+    0 12px 40px rgba(0, 153, 230, 0.06),
+    var(--shadow);
+  border: 1px solid color-mix(in oklab, var(--city-cyan) 18%, var(--border));
+  backdrop-filter: blur(14px) saturate(1.15);
 }
 
 .card--flat {
@@ -344,22 +450,63 @@ main {
   }
 }
 
+/* Hero / featured sections — 3D digital city (Device 3D–inspired) */
+.bg-digital-city,
 .bg-quiet-grid {
-  background-image: radial-gradient(
-      ellipse 80% 50% at 20% 0%,
-      var(--yellow-soft),
-      transparent 70%
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.bg-digital-city::before,
+.bg-quiet-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--bg) 55%, transparent) 0%,
+      color-mix(in oklab, var(--bg) 78%, transparent) 55%,
+      color-mix(in oklab, var(--bg) 94%, transparent) 100%
     ),
-    radial-gradient(
-      color-mix(in oklab, var(--border) 55%, transparent) 1px,
-      transparent 1px
+    url("../images/digital-city-bg.png");
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  opacity: 0.42;
+  pointer-events: none;
+}
+
+.bg-digital-city::after,
+.bg-quiet-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 50% 40% at 78% 22%, var(--city-glow-soft), transparent 60%),
+    linear-gradient(
+      118deg,
+      transparent 30%,
+      rgba(0, 200, 255, 0.14) 46%,
+      rgba(0, 153, 230, 0.08) 52%,
+      transparent 68%
     ),
-    radial-gradient(
-      color-mix(in oklab, var(--border) 35%, transparent) 1px,
-      transparent 1px
+    linear-gradient(
+      -28deg,
+      transparent 55%,
+      rgba(0, 200, 255, 0.1) 62%,
+      transparent 72%
     );
-  background-size: 100% 100%, 28px 28px, 84px 84px;
-  background-position: 0 0, 0 0, 8px 12px;
+  pointer-events: none;
+}
+
+.bg-digital-city > *,
+.bg-quiet-grid > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero {
@@ -439,10 +586,13 @@ main {
   display: grid;
   gap: 0.75rem;
   padding: 1rem;
-  background: var(--surface);
+  background: color-mix(in oklab, var(--surface) 92%, transparent);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-  border: 1px solid color-mix(in oklab, var(--border) 60%, transparent);
+  box-shadow:
+    0 12px 40px rgba(0, 153, 230, 0.1),
+    var(--shadow);
+  border: 1px solid color-mix(in oklab, var(--city-cyan) 22%, var(--border));
+  backdrop-filter: blur(16px) saturate(1.2);
 }
 
 @media (min-width: 900px) {
@@ -705,17 +855,41 @@ main {
 }
 
 .card--sky {
-  border-top: 3px solid var(--sky);
-  background: linear-gradient(180deg, var(--sky-soft) 0%, var(--surface) 32%);
+  border-top: 3px solid var(--city-cyan);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--sky-soft) 90%, transparent) 0%,
+    var(--surface) 38%
+  );
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--city-cyan) 12%, transparent),
+    0 16px 48px rgba(0, 200, 255, 0.1);
 }
 
 .bg-sky-section {
-  background: linear-gradient(
-    160deg,
-    var(--sky-soft-2) 0%,
-    color-mix(in oklab, var(--bg) 85%, var(--sky-soft)) 60%,
-    var(--bg) 100%
-  );
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-sky-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, var(--city-glow-soft), transparent 65%),
+    linear-gradient(
+      160deg,
+      var(--sky-soft-2) 0%,
+      color-mix(in oklab, var(--bg) 70%, var(--sky-soft)) 55%,
+      transparent 100%
+    );
+  pointer-events: none;
+}
+
+.bg-sky-section > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .stat__value--sky {

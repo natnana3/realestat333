@@ -68,7 +68,7 @@ All theming lives in CSS custom properties at the top of `css/styles.css`:
 - **Sky blue** (`--sky`, `--sky-2`, `--sky-3`, `--sky-soft`, `--sky-soft-2`): cards, section backgrounds, header accent line
 - **Dark mode** is automatic via `@media (prefers-color-scheme: dark)` — all variables have dark-mode overrides
 
-Key component classes: `.card`, `.card--flat`, `.card--muted`, `.card--sky`, `.card--highlight`, `.btn--primary`, `.btn--secondary`, `.listing-card`, `.property-card`, `.img-banner`, `.bg-sky-section`, `.grid-2`, `.grid-3`, `.pill`, `.county-link`.
+Key component classes: `.card`, `.card--flat`, `.card--muted`, `.card--sky`, `.card--highlight`, `.btn--primary`, `.btn--secondary`, `.listing-card`, `.property-card`, `.img-banner`, `.bg-digital-city`, `.bg-sky-section`, `.grid-2`, `.grid-3`, `.pill`, `.county-link`. Site-wide ambient background uses `body::before` / `body::after`; hero uses `images/digital-city-bg.png`.
 
 ### SEO
 
